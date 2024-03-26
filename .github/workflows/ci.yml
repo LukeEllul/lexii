@@ -1,6 +1,9 @@
 name: CI
 on: [push]
 
+env:
+  HUSKY: 0
+
 jobs:
   main:
     runs-on: ubuntu-latest
