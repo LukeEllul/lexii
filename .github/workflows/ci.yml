@@ -49,4 +49,9 @@ jobs:
         run: |
           # Extract the issue number from commit messages
           issue_number=$(git log -1 --pretty=%B | grep -o -E '#[0-9]+' | head -n 1 | tr -d '#')
-          echo $issue_number
+          if [ ! -z "$issue_number" ]; then
+            gh issue close --reason "completed" $issue_number
+            echo "Closed issue."
+          else
+            echo "No issue number found in commit message."
+          fi
