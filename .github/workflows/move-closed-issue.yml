@@ -11,4 +11,4 @@ jobs:
         with:
           project: Lexii
           column: Done
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.REPO_TOKEN }}
